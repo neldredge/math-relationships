@@ -1,9 +1,9 @@
 
 ## Install dependencies
 
-    pip install Flask
+    make requirements
 
-## Running the app
+## Running the app locally
 
-    python app.py
+    make local
 
