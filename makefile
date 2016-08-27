@@ -3,3 +3,5 @@ local:
 
 requirements:
 	pip install -r requirements.txt
+test:
+	nosetests
