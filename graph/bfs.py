@@ -20,7 +20,7 @@ def bfs(start, goal, successors):
 
     pred = {}
 
-    # q is a queue containing nodes waiting to be visited.
+    # todo is a queue containing nodes waiting to be visited.
     # We will insert on the left and pop on the right.
     # Put in the start node to get started
     
