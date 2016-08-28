@@ -1,21 +1,21 @@
 import unittest
-from bfs import bfs
+from graph.bfs import bfs
 
 class TestBfs(unittest.TestCase):
 
     line = {1 : [2], 2 : [3], 3 : []}
 
     def test_bfs_line(self):
-        self.assertNotEqual(
-            bfs(1, 3, lambda n : line[n]),
+        self.assertEqual(
+            bfs(1, 3, lambda n : self.line[n]),
             [1, 2, 3]
             )
         self.assertEqual(
-            bfs(2, 3, lambda n : line[n]),
+            bfs(2, 3, lambda n : self.line[n]),
             [2, 3]
             )
         self.assertEqual(
-            bfs(3, 1, lambda n : line[n]),
+            bfs(3, 1, lambda n : self.line[n]),
             None
             )
     
@@ -23,7 +23,7 @@ class TestBfs(unittest.TestCase):
 
     def test_bfs_loop(self):
         self.assertEqual(
-            bfs(1, 1, lambda n : loop[n]),
+            bfs(1, 1, lambda n : self.loop[n]),
             [1, 1]
             )
             
@@ -31,7 +31,7 @@ class TestBfs(unittest.TestCase):
     
     def test_bfs_fakeloop(self):
         self.assertEqual(
-            bfs(1, 3, lambda n : fakeloop[n]),
+            bfs(1, 3, lambda n : self.fakeloop[n]),
             [1, 3]
             )
 
