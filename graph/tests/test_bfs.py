@@ -1,5 +1,7 @@
 import unittest
 from graph.bfs import bfs
+from nose.tools import set_trace
+
 
 class TestBfs(unittest.TestCase):
 
@@ -55,19 +57,21 @@ class TestBfs(unittest.TestCase):
             'Eugenie',
             ],
         }
-    def royals_successors(n):
-        if n in royals:
-            return royals[n]
-        else:
-            return []
 
     def test_bfs_royals(self):
+        def royals_successors(n):
+            if n in self.royals:
+                return self.royals[n]
+            else:
+                return []
+
+        # set_trace()
         self.assertEqual(
-            bfs('Elizabeth', 'Charlotte', self.royals_successors),
+            bfs('Elizabeth', 'Charlotte', royals_successors),
             ['Elizabeth', 'Charles', 'William', 'Charlotte']
             )
         self.assertEqual(
-            bfs('Elizabeth', 'Nigel', self.royals_successors),
+            bfs('Elizabeth', 'Nigel', royals_successors),
             None
             )
 
