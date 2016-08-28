@@ -1,6 +1,5 @@
 import unittest
 from graph.bfs import bfs
-from nose.tools import set_trace
 
 
 class TestBfs(unittest.TestCase):
@@ -65,7 +64,6 @@ class TestBfs(unittest.TestCase):
             else:
                 return []
 
-        # set_trace()
         self.assertEqual(
             bfs('Elizabeth', 'Charlotte', royals_successors),
             ['Elizabeth', 'Charles', 'William', 'Charlotte']
